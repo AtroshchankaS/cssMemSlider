@@ -1,28 +1,57 @@
 * {
-    margin: 0px;
-    padding: opx;
     box-sizing: border-box;
 }
 
 .wrapper {
-    max-width: 95em;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: solid 1px #000;
 }
 
-.slider {
+#slider-block {
     max-width: 90em;
     border: solid 1px #000;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+#slider {
+  margin: 0 auto;
+}
+
+#slider article {
+    width: 20%;
+    float: left;
+}
+
+#slider .image {
+    width: 500%;
+    line-height: 0;
+}
+
+#overflow {
+    width: 100%;
+    overflow: hidden;
+}
+
+article img {
+  width: 100%;
+}
+
+#desktop:checked ~ #slider{
+  max-width: 960px;
 }
 
 .text-control {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 90em;
+    width: 100%;
     min-height: 3em;
     border: solid 1px #000;
 }
@@ -40,7 +69,9 @@
 }
 
 .button {
-    width: 1em;
+    text-align: center;
+    width: 2em;
     height: 3em;
     border: solid 1px #000;
 }
+
