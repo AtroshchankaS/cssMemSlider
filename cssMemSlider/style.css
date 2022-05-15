@@ -47,14 +47,6 @@ article img{
 	border-radius: 2vh;
 }
 
-@media(max-width: 48rem) {
-	article img {
-		width: 100%;
-		height: 25rem;
-		border-radius: 1vh;
-	}	
-}
-
 #desktop:checked ~ #slider{ 
 	max-width: 100vh; 
 }
@@ -91,8 +83,9 @@ label, a{
 #active label{ 
 	border-radius: 0.8rem; 
 	display: inline-block; 
-	width: 1rem;
-	height: 1rem;
+	width: 2vh;
+	height: 2vh;
+	margin-left: 1vh;
 	background: rgb(120, 185, 223);
 	transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -108,8 +101,8 @@ label, a{
 }
 
 #active>label:active {
-	background: rgba(249, 252, 97, 0.9);
-	width: 1.1rem;
+	background: rgb(250, 150, 67);
+	
 	transform: translateY(0.7rem);
 	
 }
@@ -144,9 +137,75 @@ label, a{
 .info h3 {
 	color: #fcfff4;
 	font-weight:200;
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	font-style: normal;
     }
 
+@media(max-width: 48rem) {
+	article img {
+		width: 100%;
+		height: 25rem;
+		border-radius: 1vh;
+	}	
+	
+	.info h3 {
+		font-size: 1rem;
+		}
+	
+}
+
+@media(max-width: 48rem) {
+	article img {
+		width: 100%;
+		height: 25rem;
+		border-radius: 1vh;
+	}	
+	
+	.info h3 {
+		font-size: 1rem;
+		}
+}
 
 
+@media(max-width: 26.6rem) {
+	.panel {
+		min-height: 75vh;
+	}
+
+	article img {
+		height: 15rem;
+	}	
+	
+	.info h3 {
+		font-size: 0.7rem;
+	}
+	
+	#active label{ 
+		border-radius: 0.4rem; 
+		width: 1.5vh;
+		height: 1.5vh;
+	}
+	
+	#active{ 
+		margin: -10rem 0 0 0;
+		text-align: center;
+	}
+
+	.info {
+		margin: 4rem 0 4rem;
+	}
+}
+
+@media(max-width: 20rem) {
+	.panel {
+		min-height: 60vh;
+	}
+	article img {
+		height: 10rem;
+	}	
+	
+	.info h3 {
+		font-size: 0.6rem;
+		}
+	
+}
