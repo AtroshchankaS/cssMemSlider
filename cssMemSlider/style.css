@@ -1,0 +1,226 @@
+* {
+	box-sizing: border-box;
+}
+
+/*оболочки*/
+
+body {
+	background-color: rgb(93, 126, 128);
+	
+}
+
+.wrapper {
+	background: rgb(100,100,100) radial-gradient(circle at 0 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
+	box-shadow: inset rgba(0,0,0,.5) -0.3vh -0.3vh 0.6vh, inset rgba(255,255,255,.9) 0.3vh 0.3vh 0.6vh, rgba(0,0,0,.8) 0.3vh 0.3vh 0.6vh -0.3vh;
+	width: auto;
+	padding: 1.5vh;
+	border-radius: 2vh;
+}
+
+.panel {
+	padding: 2vh 2vh 6vh;
+	background-color: #0b191f;
+	margin: 0 auto;
+	max-width: 80vw;
+}
+
+/*блок мемов*/
+
+#slider { 
+    position: relative;
+	text-align: center;
+}
+
+#slider{ 
+	margin: 0 auto;
+}
+
+#slides article{ 
+	width: 20%;
+	float: left;
+}
+
+#slides .image{
+	width: 500%;
+	line-height: 0;
+}
+
+#overflow{ 
+	width: 100%;
+	overflow: hidden;
+}
+
+article img{
+	width: 100%;
+	height: 70vh;
+	border-radius: 2vh;
+}
+
+#desktop:checked ~ #slider{ 
+	max-width: 100vh; 
+}
+
+#mem1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#mem2:checked ~ #slides .image{
+	margin-left: -100%;
+}
+
+#mem3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#mem4:checked ~ #slides .image{
+	margin-left: -300%;
+}
+
+/*блок контролов*/
+
+.active-items{ 
+	cursor: pointer;
+}
+
+.wrapper input{ 
+	display: none;
+}
+
+#controls{ 
+	width: 100%;
+	height: 3.5rem;
+}
+
+#active label{ 
+	border-radius: 1.5vh; 
+	display: inline-block; 
+	width: 3vh;
+	height: 3vh;
+	margin-left: 1vh;
+	background: rgb(120, 185, 223);
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#active{ 
+	margin: -8rem 0 0 0;
+	text-align: right;
+}
+
+#active>label:hover { 
+	background: #e9eef1;
+	border-color: #777 !important; 
+}
+
+#active>label:active {
+	background: rgb(250, 150, 67);
+	transform: translateY(0.7rem);
+}
+
+#mem1:checked ~ #active label:nth-child(1),
+#mem2:checked ~ #active label:nth-child(2),
+#mem3:checked ~ #active label:nth-child(3),
+#mem4:checked ~ #active label:nth-child(4) {
+	background: #0b191f;
+	border: solid 0.1rem #18a3dd !important;
+}
+
+#mem1:checked ~ #active label:nth-child(1):hover,
+#mem2:checked ~ #active label:nth-child(2):hover,
+#mem3:checked ~ #active label:nth-child(3):hover,
+#mem4:checked ~ #active label:nth-child(4):hover {
+	background: #0b191f;
+	border: solid 0.1rem #eef2f3 !important;
+}
+
+/*анимация мемов*/
+
+#slides .image{ 
+	transition: all 500ms cubic-bezier(0.95, 0.000, 0.05, 1.000);
+}
+
+/*текстовый блок*/
+
+.info {
+	margin: 2rem 0 4rem;
+	font-family:Arial, Helvetica, sans-serif;
+    font-style:normal;
+    text-align: left;
+}
+
+.info h3 {
+	color: #fcfff4;
+	font-weight: 100;
+	font-size: 1.2rem;
+	font-style: normal;
+    }
+
+/*блок адаптива*/
+
+@media(max-width: 48rem) {
+	article img {
+		width: 100%;
+		
+		border-radius: 1vh;
+	}	
+	
+	#active label{ 
+		width: 2.5vh;
+		height: 2.5vh;
+	}
+	
+
+	.info h3 {
+		font-size: 1rem;
+		}
+	
+}
+
+@media(max-width: 48rem) {
+	article img {
+		width: 100%;
+		height: 25rem;
+		border-radius: 1vh;
+	}	
+	
+	.info h3 {
+		font-size: 1rem;
+		}
+}
+
+
+@media(max-width: 26.6rem) {
+	.panel {
+		min-height: 75vh;
+	}
+
+	article img {
+		height: 15rem;
+	}	
+	
+	.info h3 {
+		font-size: 0.7rem;
+	}
+	
+	#active{ 
+		margin: -10rem 0 0 0;
+		text-align: center;
+	}
+
+	.info {
+		margin: 4rem 0 4rem;
+	}
+}
+
+@media(max-width: 20rem) {
+	.panel {
+		min-height: 60vh;
+	}
+	article img {
+		height: 10rem;
+	}	
+	
+	.info h3 {
+		font-size: 0.6rem;
+		}
+	
+}
