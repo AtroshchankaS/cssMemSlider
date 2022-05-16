@@ -2,6 +2,13 @@
 	box-sizing: border-box;
 }
 
+/*оболочки*/
+
+body {
+	background-color: rgb(93, 126, 128);
+	
+}
+
 .wrapper {
 	background: rgb(100,100,100) radial-gradient(circle at 0 0, rgba(255,255,255,.65), rgba(255,255,255,.35));
 	box-shadow: inset rgba(0,0,0,.5) -0.3vh -0.3vh 0.6vh, inset rgba(255,255,255,.9) 0.3vh 0.3vh 0.6vh, rgba(0,0,0,.8) 0.3vh 0.3vh 0.6vh -0.3vh;
@@ -16,6 +23,8 @@
 	margin: 0 auto;
 	max-width: 80vw;
 }
+
+/*блок мемов*/
 
 #slider { 
     position: relative;
@@ -51,14 +60,6 @@ article img{
 	max-width: 100vh; 
 }
 
-label, a{ 
-	cursor: pointer;
-}
-
-.wrapper input{ 
-	display: none;
-}
-
 #mem1:checked ~ #slides .image{
 	margin-left: 0;
 }
@@ -75,19 +76,29 @@ label, a{
 	margin-left: -300%;
 }
 
+/*блок контролов*/
+
+.active-items{ 
+	cursor: pointer;
+}
+
+.wrapper input{ 
+	display: none;
+}
+
 #controls{ 
 	width: 100%;
 	height: 3.5rem;
 }
 
 #active label{ 
-	border-radius: 0.8rem; 
+	border-radius: 1.5vh; 
 	display: inline-block; 
-	width: 2vh;
-	height: 2vh;
+	width: 3vh;
+	height: 3vh;
 	margin-left: 1vh;
 	background: rgb(120, 185, 223);
-	transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #active{ 
@@ -110,7 +121,7 @@ label, a{
 #mem3:checked ~ #active label:nth-child(3),
 #mem4:checked ~ #active label:nth-child(4) {
 	background: #0b191f;
-	border: solid 0.3ex #18a3dd !important;
+	border: solid 0.1rem #18a3dd !important;
 }
 
 #mem1:checked ~ #active label:nth-child(1):hover,
@@ -118,12 +129,16 @@ label, a{
 #mem3:checked ~ #active label:nth-child(3):hover,
 #mem4:checked ~ #active label:nth-child(4):hover {
 	background: #0b191f;
-	border: solid 0.3ex #eef2f3 !important;
+	border: solid 0.1rem #eef2f3 !important;
 }
 
+/*анимация мемов*/
+
 #slides .image{ 
-	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	transition: all 500ms cubic-bezier(0.95, 0.000, 0.05, 1.000);
 }
+
+/*текстовый блок*/
 
 .info {
 	margin: 2rem 0 4rem;
@@ -134,18 +149,26 @@ label, a{
 
 .info h3 {
 	color: #fcfff4;
-	font-weight:200;
-	font-size: 1.5rem;
+	font-weight: 100;
+	font-size: 1.2rem;
 	font-style: normal;
     }
+
+/*блок адаптива*/
 
 @media(max-width: 48rem) {
 	article img {
 		width: 100%;
-		height: 25rem;
+		
 		border-radius: 1vh;
 	}	
 	
+	#active label{ 
+		width: 2.5vh;
+		height: 2.5vh;
+	}
+	
+
 	.info h3 {
 		font-size: 1rem;
 		}
@@ -176,12 +199,6 @@ label, a{
 	
 	.info h3 {
 		font-size: 0.7rem;
-	}
-	
-	#active label{ 
-		border-radius: 0.4rem; 
-		width: 1.5vh;
-		height: 1.5vh;
 	}
 	
 	#active{ 
